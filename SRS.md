@@ -1,6 +1,6 @@
 # Fyzikalni-kalkulator
 
-### Verze 1
+### Verze 1.1
 Jednoduchá kalkulačka na komplikované fyzikální zákony
 
 Pejsar Vojtěch  
