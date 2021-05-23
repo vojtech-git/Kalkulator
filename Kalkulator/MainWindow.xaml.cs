@@ -61,23 +61,22 @@ namespace Kalkulator
 
         private void textbox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (textbox1.Text != string.Empty)
-            {
-                number += Convert.ToDecimal(textbox1.Text);
-            }
-            if (textbox2.Text != string.Empty)
-            {
-                number += Convert.ToDecimal(textbox2.Text);
-
-            }
-            if (textbox3.Text != string.Empty)
-            {
-                number += Convert.ToDecimal(textbox3.Text);
-            }
+            //if (textbox1.Text != string.Empty)
+            //{
+            //    number += Convert.ToDecimal(textbox1.Text);
+            //}
+            //if (textbox2.Text != string.Empty)
+            //{
+            //    number += Convert.ToDecimal(textbox2.Text);
+            //}
+            //if (textbox3.Text != string.Empty)
+            //{
+            //    number += Convert.ToDecimal(textbox3.Text);
+            //}
 
             resultTextBox.Text = "Výsledek: " + Convert.ToString(number);
 
-            number = 0;
+            //number = 0;
         }
     }
 }
