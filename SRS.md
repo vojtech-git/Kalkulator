@@ -8,7 +8,7 @@ pejsar.vojtech.2018@ssps.cz
 16.5.2021
 
 - #### Úvod
-  - Účel dokumentu
+  - Účel
     - Program by měl sloužit mému otci nebo komukoliv jenému k efektivnější práci
   - Kontakty
     - Vojtěch Pejsar pejsar.vojtech.2018@ssps.cz  
