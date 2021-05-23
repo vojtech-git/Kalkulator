@@ -22,8 +22,9 @@ pejsar.vojtech.2018@ssps.cz
     - V programu nebude možné si vytvořit vlastní vzoreček. Možné bude pouze přepínat mezi předvytvořenými.
   - Nižší priorita
     - Důraz se nebude klást na efektivitu výpočtu. Vzorečky by měli být dostatečné jednoduché a program by i přesto měl běžet plynule.
-- ### Hrubá architektura
+- ### Hrubá architektura 
     - #### Výpočet
+    - ![Diagram 1](diagram.png)  
       - Uživatel zadá hodnoty do popsaných textBox elementů. Po zmáčknutí buttonu se zobrazí výsledek výpočtu. 
       - Pole přijímající hodnoty budou vytvořeny tak, aby mohl uživatel zadat i velká čísla, nebo čísla ve zkráceném formátu (např: 1,124e10) nebo číslo zvyšovat a snižovat pomocí určených ovládacích prvků.
       - Bude mít možnost vybrat jendotky ve kterých čísla zadává.
