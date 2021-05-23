@@ -9,7 +9,7 @@ pejsar.vojtech.2018@ssps.cz
 
 - #### Úvod
   - Účel
-    - Program bude vypočítávat vysledek předem daného vzorečku. K bude používat jednoduché a intuitivní pole pro zadávaní čísel.
+    - Program bude vypočítávat vysledek předem daného vzorečku. Bude používat jednoduché a intuitivní pole pro zadávaní čísel.
   - Odkazy 
     - odkaz
 - ### Scénáře
@@ -19,9 +19,9 @@ pejsar.vojtech.2018@ssps.cz
   - Uživatelské role 
     - Program je zatím napánovaní jen pro jedu roli a to je uživatel. Ten kdo potřebuje výsledek.
   - Vymezení rozsahu
-    - V programu nebude možné si vytvořit vlastní vzoreček. Možné bude pouze přepínat mezi předvytvořenými
+    - V programu nebude možné si vytvořit vlastní vzoreček. Možné bude pouze přepínat mezi předvytvořenými.
   - Nižší priorita
-    - Důraz se nebude klást na způsob výpočtu jako je efektivita počítání. Vzorečky by měli být dostatečné jednoduché a program by i přesto měl běžet plynule.
+    - Důraz se nebude klást na efektivitu výpočtu. Vzorečky by měli být dostatečné jednoduché a program by i přesto měl běžet plynule.
 - ### Hrubá architektura
     - #### Výpočet
       - Uživatel zadá hodnoty do popsaných textBox elementů. Po zmáčknutí buttonu se zobrazí výsledek výpočtu. 
