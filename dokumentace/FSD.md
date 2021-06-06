@@ -27,4 +27,18 @@ poslední úprava 6.6.2021
 1. Výpočet
 2. Výběr jiných vzorečků (koncept)
 ### Scénář 1 - Výpočet
-![Výpočet okno](Kalkulator/dokumentace/images_dokumentace/vypocetwindow.png)
+![Výpočet okno](/dokumentace/images_dokumentace/vypocetwindow.png)
+- Nekolik polí pro zadání hodnot
+- Button pro výpočet
+- Tabulka s výsledky a mezivýsledky
+- Button pro okno vysvětlivek
+#### Akce
+- Po zadání hodnot a kliknutí na tlačítko se oběví vysledek na pravé straně.
+#### možné problémy 
+- Je možné, že uživatel zadá číslo moc dlouhé pro výpočet. Čísla musí být omezeny nebo délka jinak ošetřena.
+### Scénář 1 - Výpočet
+![Výpočet okno](/dokumentace/images_dokumentace/vysvetlivkywindow.png)
+- Text vysvětlující zkratky případné další potřebné informace
+- Button "vrátit se k výpočtu"
+#### Akce
+- Po zmáčknuí tlačítka v okně výpočtu se okno výpočtu zavře a otevře se okno vysvětlivek.
