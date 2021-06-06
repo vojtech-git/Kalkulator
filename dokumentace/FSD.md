@@ -27,4 +27,4 @@ poslední úprava 6.6.2021
 1. Výpočet
 2. Výběr jiných vzorečků (koncept)
 ### Scénář 1 - Výpočet
-![Výpočet okno](/diagram.png)
+![Výpočet okno](Kalkulator/dokumentace/images_dokumentace/vypocetwindow.png)
