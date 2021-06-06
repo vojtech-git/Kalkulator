@@ -36,9 +36,14 @@ poslední úprava 6.6.2021
 - Po zadání hodnot a kliknutí na tlačítko se oběví vysledek na pravé straně.
 #### možné problémy 
 - Je možné, že uživatel zadá číslo moc dlouhé pro výpočet. Čísla musí být omezeny nebo délka jinak ošetřena.
-### Scénář 1 - Výpočet
-![Výpočet okno](/dokumentace/images_dokumentace/vysvetlivkywindow.png)
+### Scénář 2 - Vysvětlivky
+![Vysvětlivky okno](/dokumentace/images_dokumentace/vysvetlivkywindow.png)
 - Text vysvětlující zkratky případné další potřebné informace
 - Button "vrátit se k výpočtu"
 #### Akce
 - Po zmáčknuí tlačítka v okně výpočtu se okno výpočtu zavře a otevře se okno vysvětlivek.
+### Scénář 3 - Výběr jiného vzorečku
+![Vzorerčky okno](/dokumentace/images_dokumentace/vzorečkywindow.png)
+- V základním okně comboBox na výběr jiného vzorečku.
+#### Akce
+- Uživatel si vybere v comboBoxu jiný vzoreček. To překreslí okno/otevře nové. Nové okno bude fungovat podobě jako staré ale s jinýmy hodnotami a jiným výpočtem.
