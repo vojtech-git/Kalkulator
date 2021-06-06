@@ -18,65 +18,48 @@ namespace Kalkulator
 {
     public partial class MainWindow : Window
     {
-        decimal number;
-
         public MainWindow()
         {
             InitializeComponent();
-
-            number = 0;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            if (textbox1.Text != string.Empty)
-            {
-                number += Convert.ToDecimal(textbox1.Text);
-            }
-            if (textbox2.Text != string.Empty)
-            {
-                number += Convert.ToDecimal(textbox2.Text);
-
-            }
-            if (textbox3.Text != string.Empty)
-            {
-                number += Convert.ToDecimal(textbox3.Text);
-            }
-
-            resultTextBox.Text = "Výsledek: " + Convert.ToString(number);
-
-            number = 0;
-        }
-
-        private void TextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        private void OnlyNumbers_PreviewInput(object sender, TextCompositionEventArgs e)
         {
             decimal result;
             e.Handled = !decimal.TryParse((sender as TextBox).Text + e.Text, out result);
         }
 
-        private void textbox_PreviewKeyDown(object sender, KeyEventArgs e)
+        private void NotSpace_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Space) e.Handled = true;
         }
 
-        private void textbox_TextChanged(object sender, TextChangedEventArgs e)
+        private void Button_Spocitat(object sender, RoutedEventArgs e)
         {
-            //if (textbox1.Text != string.Empty)
-            //{
-            //    number += Convert.ToDecimal(textbox1.Text);
-            //}
-            //if (textbox2.Text != string.Empty)
-            //{
-            //    number += Convert.ToDecimal(textbox2.Text);
-            //}
-            //if (textbox3.Text != string.Empty)
-            //{
-            //    number += Convert.ToDecimal(textbox3.Text);
-            //}
+            double A = 0;
+            decimal Wo = 0;
+            decimal Wk = 0;
+            double F = 0;
+            decimal M = 0;
 
-            resultTextBox.Text = "Výsledek: " + Convert.ToString(number);
+            if ((textBoxFy.Text != null || textBoxFy.Text != ",") && (textBoxFx.Text != null || textBoxFx.Text != ","))
+            {
+                resultF.Text = Convert.ToString(Math.Sqrt(Math.Pow(Convert.ToDouble(textBoxFx.Text), 2) + Math.Pow(Convert.ToDouble(textBoxFy.Text), 2)));
+            }
 
-            //number = 0;
+            if ((textBoxDo.Text != null || textBoxDo.Text != ",") && (textBoxDi.Text != null || textBoxDi.Text != ","))
+            {
+                resultA.Text = Convert.ToString((Math.PI * (Math.Pow(Convert.ToDouble(textBoxDo.Text), 2) - Math.Pow(Convert.ToDouble(textBoxDi.Text), 2))) / 4);
+            }
+
+            resultSmyk.Text = Convert.ToString(Convert.ToDecimal(resultF.Text) / Convert.ToDecimal(resultA.Text));
+        }
+
+        private void Button_Vysvetlivky(object sender, RoutedEventArgs e)
+        {
+            VysvetlivkyWindow vysvetlivkyWindow = new VysvetlivkyWindow();
+            vysvetlivkyWindow.Show();
+            this.Close();
         }
     }
 }
