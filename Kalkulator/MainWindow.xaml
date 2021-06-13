@@ -7,6 +7,37 @@
         mc:Ignorable="d"
         Title="MainWindow" FontSize="20" Foreground="Black" Background="#FFDADADA" Width="1000" Height="800" MinWidth="750" MinHeight="550"  FontFamily="Times New Roman">
     <Grid>
+        <Grid>
+            <TabControl>
+                <TabItem>
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/WpfTutorialSamples;component/Images/bullet_blue.png" />
+                            <TextBlock Text="Blue" Foreground="Blue" />
+                        </StackPanel>
+                    </TabItem.Header>
+                    <Label Content="Content goes here..." />
+                </TabItem>
+                <TabItem>
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/WpfTutorialSamples;component/Images/bullet_red.png" />
+                            <TextBlock Text="Red" Foreground="Red" />
+                        </StackPanel>
+                    </TabItem.Header>
+                </TabItem>
+                <TabItem>
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/WpfTutorialSamples;component/Images/bullet_green.png" />
+                            <TextBlock Text="Green" Foreground="Green" />
+                        </StackPanel>
+                    </TabItem.Header>
+                </TabItem>
+            </TabControl>
+        </Grid>
+        
+        
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
             <ColumnDefinition Width="0.25*"/>
@@ -39,24 +70,24 @@
         <TextBlock Grid.Row="2" Grid.Column="1" Text="Geometrie:" VerticalAlignment="Bottom" FontSize="25" FontWeight="Bold" />
         
         <TextBlock Grid.Row="3" Grid.Column="1" Text="Do" VerticalAlignment="Center"/>
-        <TextBox x:Name="textBoxDo" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" PreviewTextInput="OnlyNumbers_PreviewInput" PreviewKeyDown="NotSpace_KeyDown" />
+        <TextBox x:Name="textBoxDo" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" PreviewTextInput="OnlyNumbers_PreviewInput" PreviewKeyDown="NotSpace_KeyDown" CommandManager.PreviewExecuted="textBox_PreviewExecuted" />
 
         <TextBlock Grid.Row="5" Grid.Column="1" Text="Di" VerticalAlignment="Center"/>
-        <TextBox x:Name="textBoxDi" Grid.Row="6" Grid.Column="1" VerticalAlignment="Center" PreviewTextInput="OnlyNumbers_PreviewInput" PreviewKeyDown="NotSpace_KeyDown" />
+        <TextBox x:Name="textBoxDi" Grid.Row="6" Grid.Column="1" VerticalAlignment="Center" PreviewTextInput="OnlyNumbers_PreviewInput" PreviewKeyDown="NotSpace_KeyDown" CommandManager.PreviewExecuted="textBox_PreviewExecuted" />
 
         <TextBlock Grid.Row="7" Grid.Column="1" Text="Páteř:" VerticalAlignment="Bottom" FontSize="25" FontWeight="Bold" />
 
         <TextBlock Grid.Row="8" Grid.Column="1" Text="Fx" VerticalAlignment="Center" />
-        <TextBox x:Name="textBoxFx" Grid.Row="9" Grid.Column="1" VerticalAlignment="Center" PreviewTextInput="OnlyNumbers_PreviewInput" PreviewKeyDown="NotSpace_KeyDown" />
+        <TextBox x:Name="textBoxFx" Grid.Row="9" Grid.Column="1" VerticalAlignment="Center" PreviewTextInput="OnlyNumbers_PreviewInput" PreviewKeyDown="NotSpace_KeyDown" CommandManager.PreviewExecuted="textBox_PreviewExecuted" />
 
         <TextBlock Grid.Row="10" Grid.Column="1" Text="Fy" VerticalAlignment="Center"/>
-        <TextBox x:Name="textBoxFy" Grid.Row="11" Grid.Column="1" VerticalAlignment="Center" PreviewTextInput="OnlyNumbers_PreviewInput" PreviewKeyDown="NotSpace_KeyDown" />
+        <TextBox x:Name="textBoxFy" Grid.Row="11" Grid.Column="1" VerticalAlignment="Center" PreviewTextInput="OnlyNumbers_PreviewInput" PreviewKeyDown="NotSpace_KeyDown" CommandManager.PreviewExecuted="textBox_PreviewExecuted" />
 
         <TextBlock Grid.Row="12" Grid.Column="1" Text="Mx" VerticalAlignment="Center"/>
-        <TextBox x:Name="textBoxMx" Grid.Row="13" Grid.Column="1" VerticalAlignment="Center" PreviewTextInput="OnlyNumbers_PreviewInput" PreviewKeyDown="NotSpace_KeyDown" />
+        <TextBox x:Name="textBoxMx" Grid.Row="13" Grid.Column="1" VerticalAlignment="Center" PreviewTextInput="OnlyNumbers_PreviewInput" PreviewKeyDown="NotSpace_KeyDown" CommandManager.PreviewExecuted="textBox_PreviewExecuted" />
 
         <TextBlock Grid.Row="14" Grid.Column="1" Text="My" VerticalAlignment="Center"/>
-        <TextBox x:Name="textBoxMy" Grid.Row="15" Grid.Column="1" VerticalAlignment="Center" PreviewTextInput="OnlyNumbers_PreviewInput" PreviewKeyDown="NotSpace_KeyDown" />
+        <TextBox x:Name="textBoxMy" Grid.Row="15" Grid.Column="1" VerticalAlignment="Center" PreviewTextInput="OnlyNumbers_PreviewInput" PreviewKeyDown="NotSpace_KeyDown" CommandManager.PreviewExecuted="textBox_PreviewExecuted" />
         
         <!--Výsledkové pole-->
         <TextBlock Grid.Row="3" Grid.Column="3" Text="Konečný výsledek" VerticalAlignment="Center" FontSize="25" FontWeight="Bold" />
@@ -76,11 +107,11 @@
         <TextBlock Grid.Row="9" Grid.Column="3" Text="A:" VerticalAlignment="Bottom" />
         <TextBlock Name="resultA" Grid.Row="9" Grid.Column="3" Text="-" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
 
-        <TextBlock Grid.Row="10" Grid.Column="3" Text="Vo:" VerticalAlignment="Bottom" />
-        <TextBlock Name="resultVo" Grid.Row="10" Grid.Column="3" Text="-" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Row="10" Grid.Column="3" Text="Wo:" VerticalAlignment="Bottom" />
+        <TextBlock Name="resultWo" Grid.Row="10" Grid.Column="3" Text="-" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
 
-        <TextBlock Grid.Row="11" Grid.Column="3" Text="Vk:" VerticalAlignment="Bottom" />
-        <TextBlock Name="resultVk" Grid.Row="11" Grid.Column="3" Text="-" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Row="11" Grid.Column="3" Text="Wk:" VerticalAlignment="Bottom" />
+        <TextBlock Name="resultWk" Grid.Row="11" Grid.Column="3" Text="-" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
 
         <TextBlock Grid.Row="12" Grid.Column="3" Text="F:" VerticalAlignment="Bottom" />
         <TextBlock Name="resultF" Grid.Row="12" Grid.Column="3" Text="-" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
@@ -90,8 +121,9 @@
         
         <!--Buttony-->
 
-        <Button Grid.Row="16" Grid.Column="1" Margin="10,20" MaxWidth="200" Content="spočítat" Click="Button_Spocitat"/>
-        <Button Grid.Row="16" Grid.Column="3" Margin="10,20" MaxWidth="200" Content="vysvětlivky" Click="Button_Vysvetlivky"/>
+        <Button Grid.Row="16" Grid.Column="1" Margin="10,10" MaxWidth="200" Content="spočítat" Click="Button_Spocitat" BorderThickness="5"/>
+        
+        <Button Grid.Row="16" Grid.Column="3" Margin="10,10" MaxWidth="200" Content="vysvětlivky" Click="Button_Vysvetlivky" BorderThickness="5"/>
 
     </Grid>
 </Window>
