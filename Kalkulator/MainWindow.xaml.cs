@@ -55,8 +55,9 @@ namespace Kalkulator
             double numResultSmyk;
             double numResultOhyb;
             double numResultKrut;
+            double numResultTlak;
 
-            if (textBoxFy.Text != "" && textBoxFx.Text != "" && textBoxDo.Text != "" && textBoxDi.Text != "" && textBoxMx.Text != "" && textBoxMy.Text != "")
+            if (textBoxFx.Text != "" && textBoxFy.Text != "" && textBoxFz.Text != "" && textBoxDo.Text != "" && textBoxDi.Text != "" && textBoxMx.Text != "" && textBoxMy.Text != "" && textBoxMz.Text != "")
             {
                 //bugfixing troubleshooting
                 //MessageBox.Show(Convert.ToString(Math.Sqrt(Math.Pow(Convert.ToDouble(textBoxFx.Text), 2) + Math.Pow(Convert.ToDouble(textBoxFy.Text), 2))));
@@ -71,7 +72,8 @@ namespace Kalkulator
 
                 numResultSmyk = numResultF / numResultA;
                 numResultOhyb = numResultM / numResultWo;
-                numResultKrut = Convert.ToDouble(textBoxMx.Text) / numResultWk;
+                numResultKrut = Convert.ToDouble(textBoxMz.Text) / numResultWk;
+                numResultTlak = Convert.ToDouble(textBoxFz.Text) / numResultA;
 
                 resultA.Text = numResultA.ToString("g5", NumberFormatInfo.CurrentInfo);
                 resultF.Text = numResultF.ToString("g5", NumberFormatInfo.CurrentInfo);
@@ -82,6 +84,7 @@ namespace Kalkulator
                 resultOhyb.Text = numResultOhyb.ToString("g5", NumberFormatInfo.CurrentInfo);
                 resultKrut.Text = numResultKrut.ToString("g5", NumberFormatInfo.CurrentInfo); 
                 resultSmyk.Text = numResultSmyk.ToString("g5", NumberFormatInfo.CurrentInfo);
+                resultTlak.Text = numResultTlak.ToString("g5", NumberFormatInfo.CurrentInfo);
             }
         }
 
