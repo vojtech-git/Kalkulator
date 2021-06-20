@@ -86,6 +86,9 @@
     <Compile Include="VysvetlivkyWindow.xaml.cs">
       <DependentUpon>VysvetlivkyWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WindowPyth.xaml.cs">
+      <DependentUpon>WindowPyth.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -99,6 +102,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="VysvetlivkyWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowPyth.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

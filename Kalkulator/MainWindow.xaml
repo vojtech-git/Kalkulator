@@ -9,12 +9,13 @@
     <Window.Background>
         <SolidColorBrush Color="#FFC8C8C8"/>
     </Window.Background>
-    <Grid>
+    <Grid x:Name="mainGrid">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
             <ColumnDefinition Width="0.25*"/>
             <ColumnDefinition Width="0.1*"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="0.5*"/>
             <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -38,8 +39,27 @@
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
 
+        <!--menu-->
+        <Menu Grid.Row="0" Grid.Column="0" Grid.ColumnSpan ="50">
+            <MenuItem Header="_Program">
+                <MenuItem Header="_:)" Click="Smajlík"/>
+                <Separator />
+                <MenuItem Header="_Exit" Click="MenuItem_Exit"/>
+            </MenuItem>
+            <MenuItem Header="_Vzorečky">
+                <MenuItem Header="_Úhly"/>
+                <MenuItem Header="_Pythagorovka" >
+                    <MenuItem Header="Vypocet strany A" Click="MenuItem_PythagorA"/>
+                    <MenuItem Header="Vypocet strany B" Click="MenuItem_PythagorB"/>
+                    <MenuItem Header="Vypocet strany C" Click="MenuItem_PythagorC"/>
+                </MenuItem>
+                <MenuItem Header="_Mechanické napětí" />
+            </MenuItem>
+        </Menu>
+
+        <!--#region Napeti-->
         <!--Zadávací pole-->
-        <StackPanel Grid.Row="2" Grid.Column="1" Grid.RowSpan="4" >
+        <StackPanel Name="geometriePanel" Grid.Row="2" Grid.Column="1" Grid.RowSpan="4" >
             <TextBlock DockPanel.Dock="Top" Text="Geometrie:" VerticalAlignment="Bottom" FontSize="25" FontWeight="Bold" />
 
             <TextBlock Text="Do" VerticalAlignment="Center"/>
@@ -50,7 +70,7 @@
 
         </StackPanel>
 
-        <StackPanel Grid.Row="6" Grid.Column="1" Grid.RowSpan="10" >
+        <StackPanel Name="paterPanel" Grid.Row="6" Grid.Column="1" Grid.RowSpan="10" >
             <TextBlock Text="Páteř:" VerticalAlignment="Bottom" FontSize="25" FontWeight="Bold" />
 
             <TextBlock Text="Fx" VerticalAlignment="Center" />
@@ -75,41 +95,50 @@
         <!--Výsledkové pole-->
         <TextBlock Grid.Row="2" Grid.Column="3" Text="Konečný výsledek" VerticalAlignment="Center" FontSize="25" FontWeight="Bold" />
 
-        <TextBlock Grid.Row="3" Grid.Column="3" Text="Smyk:" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
-        <TextBox Name="resultSmyk" Grid.Row="3" Grid.Column="3" Text="-" VerticalAlignment="Bottom" HorizontalAlignment="Center" Background="Transparent" BorderThickness="0" IsReadOnly="True" TextWrapping="Wrap"/>
+        <StackPanel Name="vysledkyStringPanel" Grid.Row="3" Grid.Column="3" Grid.RowSpan="4">
+            <TextBlock Grid.Row="3" Grid.Column="3" Text="Smyk:" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
+            <TextBlock Grid.Row="4" Grid.Column="3" Text="Ohyb:" VerticalAlignment="Bottom" />
+            <TextBlock Grid.Row="5" Grid.Column="3" Text="Krut:" VerticalAlignment="Bottom" />
+            <TextBlock Grid.Row= "6" Grid.Column="3" Text="Tlak:" VerticalAlignment="Bottom" />
+        </StackPanel>
 
-        <TextBlock Grid.Row="4" Grid.Column="3" Text="Ohyb:" VerticalAlignment="Bottom" />
-        <TextBlock Name="resultOhyb" Grid.Row="4" Grid.Column="3" Text="-" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+        <StackPanel Name="vysledkyNumPanel" Grid.Row="3" Grid.Column="4" HorizontalAlignment="Center" Grid.RowSpan="4">
+            <TextBox Name="resultSmyk" Grid.Row="3" Grid.Column="3" Text="-" VerticalAlignment="Bottom" HorizontalAlignment="Center" Background="Transparent" BorderThickness="0" IsReadOnly="True" TextWrapping="Wrap"/>
+            <TextBlock Name="resultOhyb" Grid.Row="4" Grid.Column="3" Text="-" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+            <TextBlock Name="resultKrut" Grid.Row="5" Grid.Column="3" Text="-" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+            <TextBlock Name="resultTlak" Grid.Row="6" Grid.Column="3" Text="-" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+        </StackPanel>
 
-        <TextBlock Grid.Row="5" Grid.Column="3" Text="Krut:" VerticalAlignment="Bottom" />
-        <TextBlock Name="resultKrut" Grid.Row="5" Grid.Column="3" Text="-" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
-
-        <TextBlock Grid.Row= "6" Grid.Column="3" Text="Tlak:" VerticalAlignment="Bottom" />
-        <TextBlock Name="resultTlak" Grid.Row="6" Grid.Column="3" Text="-" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
-
-
+        <!--mezivysledky-->
         <TextBlock Grid.Row="8" Grid.Column="3" Text="Mezivýsledky" VerticalAlignment="Center" FontSize="25" FontWeight="Bold" />
 
-        <TextBlock Grid.Row="9" Grid.Column="3" Text="A:" VerticalAlignment="Bottom" />
-        <TextBlock Name="resultA" Grid.Row="9" Grid.Column="3" Text="-" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+        <StackPanel Name="mezivysledkyStringPanel" Grid.Row="9" Grid.Column="3" Grid.RowSpan="7">
+            <TextBlock Grid.Row="9" Grid.Column="3" Text="A:" VerticalAlignment="Bottom" />
+            <TextBlock Grid.Row="10" Grid.Column="3" Text="Wo:" VerticalAlignment="Bottom" />
+            <TextBlock Grid.Row="11" Grid.Column="3" Text="Wk:" VerticalAlignment="Bottom" />
+            <TextBlock Grid.Row="12" Grid.Column="3" Text="F:" VerticalAlignment="Bottom" />
+            <TextBlock Grid.Row="13" Grid.Column="3" Text="M:" VerticalAlignment="Bottom" />
 
-        <TextBlock Grid.Row="10" Grid.Column="3" Text="Wo:" VerticalAlignment="Bottom" />
-        <TextBlock Name="resultWo" Grid.Row="10" Grid.Column="3" Text="-" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+        </StackPanel>
 
-        <TextBlock Grid.Row="11" Grid.Column="3" Text="Wk:" VerticalAlignment="Bottom" />
-        <TextBlock Name="resultWk" Grid.Row="11" Grid.Column="3" Text="-" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
-
-        <TextBlock Grid.Row="12" Grid.Column="3" Text="F:" VerticalAlignment="Bottom" />
-        <TextBlock Name="resultF" Grid.Row="12" Grid.Column="3" Text="-" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
-
-        <TextBlock Grid.Row="13" Grid.Column="3" Text="M:" VerticalAlignment="Bottom" />
-        <TextBlock Name="resultM" Grid.Row="13" Grid.Column="3" Text="-" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+        <StackPanel Name="mezivysledkyNumPanel" Grid.Row="9" Grid.Column="4" HorizontalAlignment="Center" Grid.RowSpan="7">
+            <TextBlock Name="resultA" Grid.Row="9" Grid.Column="3" Text="-" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+            <TextBlock Name="resultWo" Grid.Row="10" Grid.Column="3" Text="-" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+            <TextBlock Name="resultWk" Grid.Row="11" Grid.Column="3" Text="-" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+            <TextBlock Name="resultF" Grid.Row="12" Grid.Column="3" Text="-" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+            <TextBlock Name="resultM" Grid.Row="13" Grid.Column="3" Text="-" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+        </StackPanel>
 
         <!--Buttony-->
+        <Button Name="btnSpocitatNapeti" Grid.Row="16" Grid.Column="1" Margin="10,10" MaxWidth="200" Content="spočítat" BorderThickness="5" Click="Button_Spocitat"/>
+        <Button Name="btnVysvetlivkyNapeti" Grid.Row="16" Grid.Column="3" Margin="10,10" MaxWidth="200" Content="vysvětlivky" BorderThickness="5" Click="Button_Vysvetlivky"/>
+        <!--#endregion-->
 
-        <Button Grid.Row="16" Grid.Column="1" Margin="10,10" MaxWidth="200" Content="spočítat" BorderThickness="5" Click="Button_Spocitat"/>
+        <!--#region Uhly-->
+        <Button Name="btnSpocitatUhly" Grid.Row="16" Grid.Column="1" Margin="10,10" MaxWidth="200" Content="spočítat" BorderThickness="5" Click="Button_Spocitat" Visibility="Hidden"/>
+        <Button Name="btnVysvetlivkyUhly" Grid.Row="16" Grid.Column="3" Margin="10,10" MaxWidth="200" Content="vysvětlivky" BorderThickness="5" Click="Button_Vysvetlivky" Visibility="Hidden"/>
+        <!--#endregion-->
 
-        <Button Grid.Row="16" Grid.Column="3" Margin="10,10" MaxWidth="200" Content="vysvětlivky" BorderThickness="5" Click="Button_Vysvetlivky"/>
-
+        
     </Grid>
 </Window>

@@ -21,6 +21,8 @@ namespace Kalkulator
 {
     public partial class MainWindow : Window
     {
+        public static int vzorecek = 0;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -119,6 +121,41 @@ namespace Kalkulator
         {
             VysvetlivkyWindow vysvetlivkyWindow = new VysvetlivkyWindow();
             vysvetlivkyWindow.Show();
+            this.Close();
+        }
+
+        private void Smajlík(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(":) nic");
+        }
+
+        private void MenuItem_Exit(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void MenuItem_PythagorA(object sender, RoutedEventArgs e)
+        {
+            vzorecek = 1;
+
+            WindowPyth pyth = new WindowPyth();
+            pyth.Show();
+            this.Close();
+        }
+        private void MenuItem_PythagorB(object sender, RoutedEventArgs e)
+        {
+            vzorecek = 2;
+
+            WindowPyth pyth = new WindowPyth();
+            pyth.Show();
+            this.Close();
+        }
+        private void MenuItem_PythagorC(object sender, RoutedEventArgs e)
+        {
+            vzorecek = 3;
+
+            WindowPyth pyth = new WindowPyth();
+            pyth.Show();
             this.Close();
         }
     }

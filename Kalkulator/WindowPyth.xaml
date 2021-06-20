@@ -1,0 +1,82 @@
+﻿<Window x:Class="Kalkulator.WindowPyth"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kalkulator"
+        mc:Ignorable="d"
+        Title="Pythagorova Věta" FontSize="20" Foreground="Black" Width="1000" Height="800" MinWidth="720" MinHeight="640"  FontFamily="Times New Roman">
+    <Window.Background>
+        <SolidColorBrush Color="#FFC8C8C8"/>
+    </Window.Background>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="0.25*"/>
+            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+
+        <!--menu-->
+        <Menu Grid.Row="0" Grid.Column="0" Grid.ColumnSpan ="50">
+            <MenuItem Header="_Program">
+                <MenuItem Header="_:)" Click="Smajlík"/>
+                <Separator />
+                <MenuItem Header="_Exit" Click="MenuItem_Exit"/>
+            </MenuItem>
+            <MenuItem Header="_Vzorečky">
+                <MenuItem Header="_Pythagorovka" >
+                    <MenuItem Header="Vypocet strany A" Click="MenuItem_PythagorA"/>
+                    <MenuItem Header="Vypocet strany B" Click="MenuItem_PythagorB"/>
+                    <MenuItem Header="Vypocet strany C" Click="MenuItem_PythagorC"/>
+                </MenuItem>
+                <MenuItem Header="_Mechanické napětí" />
+            </MenuItem>
+        </Menu>
+
+        <!--Zadavaci pole-->
+        <StackPanel x:Name="zadavaciPythagorasPanel" Grid.Row="2" Grid.Column="1" Grid.RowSpan="14">
+            <TextBlock DockPanel.Dock="Top" Text="Hodnoty:" VerticalAlignment="Bottom" FontSize="25" FontWeight="Bold" />
+
+            <TextBlock x:Name="ATextBlock" Text="Strana A" VerticalAlignment="Center"/>
+            <TextBox x:Name="ATextBox" VerticalAlignment="Center" PreviewTextInput="OnlyNumbers_PreviewInput" PreviewKeyDown="NotSpace_KeyDown" CommandManager.PreviewExecuted="textBox_PreviewExecuted"/>
+
+            <TextBlock x:Name="BTextBlock" Text="Strana B" VerticalAlignment="Center"/>
+            <TextBox x:Name="BTextBox" VerticalAlignment="Center" PreviewTextInput="OnlyNumbers_PreviewInput" PreviewKeyDown="NotSpace_KeyDown" CommandManager.PreviewExecuted="textBox_PreviewExecuted"  />
+
+            <TextBlock x:Name="CTextBlock" Text="Strana C" VerticalAlignment="Center" />
+            <TextBox x:Name="CTextBox" VerticalAlignment="Center" PreviewTextInput="OnlyNumbers_PreviewInput" PreviewKeyDown="NotSpace_KeyDown" CommandManager.PreviewExecuted="textBox_PreviewExecuted"  />
+        </StackPanel>
+
+        <!--vysledky-->
+
+        <!--mezivysledky-->
+
+        <!--buttony-->
+        <Button Grid.Row="16" Grid.Column="1" Margin="10,10" MaxWidth="200" Content="spočítat" BorderThickness="5" />
+        <Button Grid.Row="16" Grid.Column="3" Margin="10,10" MaxWidth="200" Content="vysvětlivky" BorderThickness="5" />
+
+    </Grid>
+</Window>
