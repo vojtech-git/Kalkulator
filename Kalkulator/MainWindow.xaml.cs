@@ -136,27 +136,145 @@ namespace Kalkulator
 
         private void MenuItem_PythagorA(object sender, RoutedEventArgs e)
         {
-            vzorecek = 1;
+            ATextBlock.Visibility = Visibility.Collapsed;
+            ATextBox.Visibility = Visibility.Collapsed;
+            stringRestultStranaB.Visibility = Visibility.Collapsed;
+            resultStranaB.Visibility = Visibility.Collapsed;
+            stringRestultStranaC.Visibility = Visibility.Collapsed;
+            resultStranaC.Visibility = Visibility.Collapsed;
+            btnSpocitatNapeti.Visibility = Visibility.Hidden;
+            btnVysvetlivkyNapeti.Visibility = Visibility.Hidden;
+            vysledkyNumPanel.Visibility = Visibility.Hidden;
+            vysledkyStringPanel.Visibility = Visibility.Hidden;
+            mezivysledkyNumPanel.Visibility = Visibility.Hidden;
+            mezivysledkyStringPanel.Visibility = Visibility.Hidden;
+            geometriePanel.Visibility = Visibility.Hidden;
+            paterPanel.Visibility = Visibility.Hidden;
+            konecnyVysledekName.Visibility = Visibility.Hidden;
+            MezivysledkyName.Visibility = Visibility.Hidden;
 
-            WindowPyth pyth = new WindowPyth();
-            pyth.Show();
-            this.Close();
+            BTextBlock.Visibility = Visibility.Visible;
+            BTextBox.Visibility = Visibility.Visible;
+            CTextBlock.Visibility = Visibility.Visible;
+            CTextBox.Visibility = Visibility.Visible;
+            resultStranaA.Visibility = Visibility.Visible;
+            stringRestultStranaA.Visibility = Visibility.Visible;
+            spocitatPy.Visibility = Visibility.Visible;
+            //VysvetlivkyPy.Visibility = Visibility.Visible;
+            vysledkyNumPanelPy.Visibility = Visibility.Visible;
+            vysledkyStringPanelPy.Visibility = Visibility.Visible;
+            zadavaciPythagorasPanel.Visibility = Visibility.Visible; 
+
+            vzorecek = 1;
         }
         private void MenuItem_PythagorB(object sender, RoutedEventArgs e)
         {
-            vzorecek = 2;
+            BTextBlock.Visibility = Visibility.Collapsed;
+            BTextBox.Visibility = Visibility.Collapsed;
+            stringRestultStranaA.Visibility = Visibility.Collapsed;
+            resultStranaA.Visibility = Visibility.Collapsed;
+            stringRestultStranaC.Visibility = Visibility.Collapsed;
+            resultStranaC.Visibility = Visibility.Collapsed;
+            btnSpocitatNapeti.Visibility = Visibility.Hidden;
+            btnVysvetlivkyNapeti.Visibility = Visibility.Hidden;
+            vysledkyNumPanel.Visibility = Visibility.Hidden;
+            vysledkyStringPanel.Visibility = Visibility.Hidden;
+            mezivysledkyNumPanel.Visibility = Visibility.Hidden;
+            mezivysledkyStringPanel.Visibility = Visibility.Hidden;
+            geometriePanel.Visibility = Visibility.Hidden;
+            paterPanel.Visibility = Visibility.Hidden;
+            konecnyVysledekName.Visibility = Visibility.Hidden;
+            MezivysledkyName.Visibility = Visibility.Hidden;
 
-            WindowPyth pyth = new WindowPyth();
-            pyth.Show();
-            this.Close();
+            ATextBlock.Visibility = Visibility.Visible;
+            ATextBox.Visibility = Visibility.Visible;
+            CTextBlock.Visibility = Visibility.Visible;
+            CTextBox.Visibility = Visibility.Visible;
+            resultStranaB.Visibility = Visibility.Visible;
+            stringRestultStranaB.Visibility = Visibility.Visible;
+            spocitatPy.Visibility = Visibility.Visible;
+            //VysvetlivkyPy.Visibility = Visibility.Visible;
+            vysledkyNumPanelPy.Visibility = Visibility.Visible;
+            vysledkyStringPanelPy.Visibility = Visibility.Visible;
+            zadavaciPythagorasPanel.Visibility = Visibility.Visible;
+
+            vzorecek = 2;
         }
         private void MenuItem_PythagorC(object sender, RoutedEventArgs e)
         {
+            CTextBlock.Visibility = Visibility.Collapsed;
+            CTextBox.Visibility = Visibility.Collapsed;
+            stringRestultStranaB.Visibility = Visibility.Collapsed;
+            resultStranaB.Visibility = Visibility.Collapsed;
+            stringRestultStranaA.Visibility = Visibility.Collapsed;
+            resultStranaA.Visibility = Visibility.Collapsed;
+            btnSpocitatNapeti.Visibility = Visibility.Hidden;
+            btnVysvetlivkyNapeti.Visibility = Visibility.Hidden;
+            vysledkyNumPanel.Visibility = Visibility.Hidden;
+            vysledkyStringPanel.Visibility = Visibility.Hidden;
+            mezivysledkyNumPanel.Visibility = Visibility.Hidden;
+            mezivysledkyStringPanel.Visibility = Visibility.Hidden;
+            geometriePanel.Visibility = Visibility.Hidden;
+            paterPanel.Visibility = Visibility.Hidden;
+            konecnyVysledekName.Visibility = Visibility.Hidden;
+            MezivysledkyName.Visibility = Visibility.Hidden;
+
+            ATextBlock.Visibility = Visibility.Visible;
+            ATextBox.Visibility = Visibility.Visible;
+            BTextBlock.Visibility = Visibility.Visible;
+            BTextBox.Visibility = Visibility.Visible;
+            resultStranaC.Visibility = Visibility.Visible;
+            stringRestultStranaC.Visibility = Visibility.Visible;
+            spocitatPy.Visibility = Visibility.Visible;
+            //VysvetlivkyPy.Visibility = Visibility.Visible;
+            vysledkyNumPanelPy.Visibility = Visibility.Visible;
+            vysledkyStringPanelPy.Visibility = Visibility.Visible;
+            zadavaciPythagorasPanel.Visibility = Visibility.Visible;
+
             vzorecek = 3;
 
-            WindowPyth pyth = new WindowPyth();
-            pyth.Show();
-            this.Close();
+        }
+
+        private void MenuItem_Napeti(object sender, RoutedEventArgs e)
+        {
+            vysledkyNumPanelPy.Visibility = Visibility.Hidden;
+            vysledkyStringPanelPy.Visibility = Visibility.Hidden;
+            zadavaciPythagorasPanel.Visibility = Visibility.Hidden;
+            spocitatPy.Visibility = Visibility.Hidden;
+
+            btnSpocitatNapeti.Visibility = Visibility.Visible;
+            btnVysvetlivkyNapeti.Visibility = Visibility.Visible;
+            vysledkyNumPanel.Visibility = Visibility.Visible;
+            vysledkyStringPanel.Visibility = Visibility.Visible;
+            mezivysledkyNumPanel.Visibility = Visibility.Visible;
+            mezivysledkyStringPanel.Visibility = Visibility.Visible;
+            geometriePanel.Visibility = Visibility.Visible;
+            paterPanel.Visibility = Visibility.Visible;
+            konecnyVysledekName.Visibility = Visibility.Visible;
+            MezivysledkyName.Visibility = Visibility.Visible;
+
+            vzorecek = 0;
+        }
+
+        private void spocitatPy_Click(object sender, RoutedEventArgs e)
+        {
+            double vysledek = 0;
+
+            if (vzorecek == 1)
+            {
+                vysledek = Math.Sqrt((Math.Pow(Convert.ToDouble(CTextBox.Text), 2) - Math.Pow(Convert.ToDouble(BTextBox.Text), 2)));
+                resultStranaA.Text = vysledek.ToString("g5", NumberFormatInfo.CurrentInfo);
+            }
+            if (vzorecek == 2)
+            {
+                vysledek = Math.Sqrt((Math.Pow(Convert.ToDouble(CTextBox.Text), 2) - Math.Pow(Convert.ToDouble(ATextBox.Text), 2)));
+                resultStranaB.Text = vysledek.ToString("g5", NumberFormatInfo.CurrentInfo);
+            }
+            if (vzorecek == 3)
+            {
+                vysledek = Math.Sqrt((Math.Pow(Convert.ToDouble(BTextBox.Text), 2) + Math.Pow(Convert.ToDouble(ATextBox.Text), 2)));
+                resultStranaC.Text = vysledek.ToString("g5", NumberFormatInfo.CurrentInfo);
+            }
         }
     }
 }

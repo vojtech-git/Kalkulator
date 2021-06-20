@@ -27,14 +27,14 @@
         <!--Popis tohoto vzorečku-->
         <Image Grid.Row="1" Grid.Column="1" Source="nakres.png" />
         <StackPanel Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock Text="Do - neco znamena" />
-            <TextBlock Text="Di - neco znamena"/>
+            <TextBlock ><Run Text="Do - "/><Run Text="průměr"/></TextBlock>
+            <TextBlock><Run Text="Di - "/><Run Text="průměr 2 "/></TextBlock>
             <TextBlock Text=""/>
-            <TextBlock Text="Fx/y/z - neco znamena"/>
-            <TextBlock Text="Mx/y/z - neco znamena"/>
+            <TextBlock><Run Text="Fx/y/z - "/><Run Text="souradnice"/></TextBlock>
+            <TextBlock><Run Text="Mx/y/z - "/><Run Text="souradnice"/></TextBlock>
         </StackPanel>
-        <TextBlock Grid.Row="1" Grid.Column="3" Text="Tento vzoreček vypočítává krut smyk atd v kruhovém průřezu?. zadáváni hodnot funguje pouze v evropském formátu. To znamená, že se používá v desetinných číslech čárka." VerticalAlignment="Center" TextWrapping="Wrap"/>
-        
+        <TextBlock Grid.Row="1" Grid.Column="3" VerticalAlignment="Center" TextWrapping="Wrap"><Run Text="Tento vzoreček vypočítává "/><Run Text="mechanické napětí podle zadaných hodnot."/><LineBreak/><Run Text="Desetinné čísla používají čárku"/><Run Text="."/></TextBlock>
+
         <!--obecny popis aplikace-->        
         <!--<TextBlock Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap" FontSize="15"> <Run Text="Vytvořeno při studiu na Smíchovské střední půmyslové škole"/><LineBreak/><LineBreak/><Run Text="školní rok 2020/21"/></TextBlock>-->
 
