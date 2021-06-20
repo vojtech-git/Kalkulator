@@ -5,7 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kalkulator"
         mc:Ignorable="d"
-        Title="Výpočet" FontSize="20" Foreground="Black" Background="#FFDADADA" Width="1000" Height="800" MinWidth="720" MinHeight="640"  FontFamily="Times New Roman">
+        Title="Výpočet" FontSize="20" Foreground="Black" Width="1000" Height="800" MinWidth="720" MinHeight="640"  FontFamily="Times New Roman">
+    <Window.Background>
+        <SolidColorBrush Color="#FFC8C8C8"/>
+    </Window.Background>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
@@ -46,6 +49,7 @@
             <TextBox x:Name="textBoxDi" VerticalAlignment="Center" PreviewTextInput="OnlyNumbers_PreviewInput" PreviewKeyDown="NotSpace_KeyDown" CommandManager.PreviewExecuted="textBox_PreviewExecuted" />
 
         </StackPanel>
+
         <StackPanel Grid.Row="6" Grid.Column="1" Grid.RowSpan="10" >
             <TextBlock Text="Páteř:" VerticalAlignment="Bottom" FontSize="25" FontWeight="Bold" />
 
@@ -57,7 +61,7 @@
 
             <TextBlock Text="Fz" VerticalAlignment="Center"/>
             <TextBox x:Name="textBoxFz" VerticalAlignment="Center" PreviewTextInput="OnlyNumbers_PreviewInput" PreviewKeyDown="NotSpace_KeyDown" CommandManager.PreviewExecuted="textBox_PreviewExecuted" />
-            
+
             <TextBlock Text="Mx" VerticalAlignment="Center"/>
             <TextBox x:Name="textBoxMx" VerticalAlignment="Center" PreviewTextInput="OnlyNumbers_PreviewInput" PreviewKeyDown="NotSpace_KeyDown" CommandManager.PreviewExecuted="textBox_PreviewExecuted" />
 
@@ -67,45 +71,45 @@
             <TextBlock Text="Mz" VerticalAlignment="Center"/>
             <TextBox x:Name="textBoxMz" VerticalAlignment="Center" PreviewTextInput="OnlyNumbers_PreviewInput" PreviewKeyDown="NotSpace_KeyDown" CommandManager.PreviewExecuted="textBox_PreviewExecuted" />
         </StackPanel>
-        
+
         <!--Výsledkové pole-->
-        <TextBlock Grid.Row="3" Grid.Column="3" Text="Konečný výsledek" VerticalAlignment="Center" FontSize="25" FontWeight="Bold" />
+        <TextBlock Grid.Row="2" Grid.Column="3" Text="Konečný výsledek" VerticalAlignment="Center" FontSize="25" FontWeight="Bold" />
 
-        <TextBlock Grid.Row="4" Grid.Column="3" Text="Smyk:" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
-        <TextBlock Name="resultSmyk" Grid.Row="4" Grid.Column="3" Text="-" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Row="3" Grid.Column="3" Text="Smyk:" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
+        <TextBox Name="resultSmyk" Grid.Row="3" Grid.Column="3" Text="-" VerticalAlignment="Bottom" HorizontalAlignment="Center" Background="Transparent" BorderThickness="0" IsReadOnly="True" TextWrapping="Wrap"/>
 
-        <TextBlock Grid.Row="5" Grid.Column="3" Text="Ohyb:" VerticalAlignment="Bottom" />
-        <TextBlock Name="resultOhyb" Grid.Row="5" Grid.Column="3" Text="-" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Row="4" Grid.Column="3" Text="Ohyb:" VerticalAlignment="Bottom" />
+        <TextBlock Name="resultOhyb" Grid.Row="4" Grid.Column="3" Text="-" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
 
-        <TextBlock Grid.Row="6" Grid.Column="3" Text="Krut:" VerticalAlignment="Bottom" />
-        <TextBlock Name="resultKrut" Grid.Row="6" Grid.Column="3" Text="-" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
-        
-        <TextBlock Grid.Row= "7" Grid.Column="3" Text="Tlak:" VerticalAlignment="Bottom" />
-        <TextBlock Name="resultTlak" Grid.Row="7" Grid.Column="3" Text="-" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Row="5" Grid.Column="3" Text="Krut:" VerticalAlignment="Bottom" />
+        <TextBlock Name="resultKrut" Grid.Row="5" Grid.Column="3" Text="-" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
 
-        
-        <TextBlock Grid.Row="9" Grid.Column="3" Text="Mezivýsledky" VerticalAlignment="Center" FontSize="25" FontWeight="Bold" />
+        <TextBlock Grid.Row= "6" Grid.Column="3" Text="Tlak:" VerticalAlignment="Bottom" />
+        <TextBlock Name="resultTlak" Grid.Row="6" Grid.Column="3" Text="-" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
 
-        <TextBlock Grid.Row="10" Grid.Column="3" Text="A:" VerticalAlignment="Bottom" />
-        <TextBlock Name="resultA" Grid.Row="10" Grid.Column="3" Text="-" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
 
-        <TextBlock Grid.Row="11" Grid.Column="3" Text="Wo:" VerticalAlignment="Bottom" />
-        <TextBlock Name="resultWo" Grid.Row="11" Grid.Column="3" Text="-" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Row="8" Grid.Column="3" Text="Mezivýsledky" VerticalAlignment="Center" FontSize="25" FontWeight="Bold" />
 
-        <TextBlock Grid.Row="12" Grid.Column="3" Text="Wk:" VerticalAlignment="Bottom" />
-        <TextBlock Name="resultWk" Grid.Row="12" Grid.Column="3" Text="-" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Row="9" Grid.Column="3" Text="A:" VerticalAlignment="Bottom" />
+        <TextBlock Name="resultA" Grid.Row="9" Grid.Column="3" Text="-" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
 
-        <TextBlock Grid.Row="13" Grid.Column="3" Text="F:" VerticalAlignment="Bottom" />
-        <TextBlock Name="resultF" Grid.Row="13" Grid.Column="3" Text="-" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Row="10" Grid.Column="3" Text="Wo:" VerticalAlignment="Bottom" />
+        <TextBlock Name="resultWo" Grid.Row="10" Grid.Column="3" Text="-" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
 
-        <TextBlock Grid.Row="14" Grid.Column="3" Text="M:" VerticalAlignment="Bottom" />
-        <TextBlock Name="resultM" Grid.Row="14" Grid.Column="3" Text="-" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
-        
+        <TextBlock Grid.Row="11" Grid.Column="3" Text="Wk:" VerticalAlignment="Bottom" />
+        <TextBlock Name="resultWk" Grid.Row="11" Grid.Column="3" Text="-" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+
+        <TextBlock Grid.Row="12" Grid.Column="3" Text="F:" VerticalAlignment="Bottom" />
+        <TextBlock Name="resultF" Grid.Row="12" Grid.Column="3" Text="-" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+
+        <TextBlock Grid.Row="13" Grid.Column="3" Text="M:" VerticalAlignment="Bottom" />
+        <TextBlock Name="resultM" Grid.Row="13" Grid.Column="3" Text="-" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+
         <!--Buttony-->
 
-        <Button Grid.Row="16" Grid.Column="1" Margin="10,10" MaxWidth="200" Content="spočítat" Click="Button_Spocitat" BorderThickness="5"/>
-        
-        <Button Grid.Row="16" Grid.Column="3" Margin="10,10" MaxWidth="200" Content="vysvětlivky" Click="Button_Vysvetlivky" BorderThickness="5"/>
+        <Button Grid.Row="16" Grid.Column="1" Margin="10,10" MaxWidth="200" Content="spočítat" BorderThickness="5" Click="Button_Spocitat"/>
+
+        <Button Grid.Row="16" Grid.Column="3" Margin="10,10" MaxWidth="200" Content="vysvětlivky" BorderThickness="5" Click="Button_Vysvetlivky"/>
 
     </Grid>
 </Window>

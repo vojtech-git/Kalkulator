@@ -5,8 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kalkulator"
         mc:Ignorable="d"
-        Title="Vysvetlivky" Height="450" Width="800">
-    <Grid>
+        Title="Vysvetlivky tlak" FontSize="20" Foreground="Black" Width="1000" Height="800" MinWidth="720" MinHeight="640"  FontFamily="Times New Roman">
+    <Window.Background>
+        <SolidColorBrush Color="#FFC8C8C8"/>
+    </Window.Background>
+    <Grid Background="#FFD4D4D4">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
             <ColumnDefinition Width="*"/>
@@ -15,17 +18,28 @@
             <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="20"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="0.25*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="1" Grid.Column="1" Text="Vysvětlivky" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="40" FontWeight="Bold"/>
-        <TextBlock Grid.Row="2" Grid.Column="2" Text="Místo k popsáni programu nebo pro vysvětlující obrázky APLIKACE JE V EVROPA FORMATU" VerticalAlignment="Center"/>
+        <!--Popis tohoto vzorečku-->
+        <Image Grid.Row="1" Grid.Column="1" Source="nakres.png" />
+        <StackPanel Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Do - neco znamena" />
+            <TextBlock Text="Di - neco znamena"/>
+            <TextBlock Text=""/>
+            <TextBlock Text="Fx/y/z - neco znamena"/>
+            <TextBlock Text="Mx/y/z - neco znamena"/>
+        </StackPanel>
+        <TextBlock Grid.Row="1" Grid.Column="3" Text="Tento vzoreček vypočítává krut smyk atd v kruhovém průřezu?. zadáváni hodnot funguje pouze v evropském formátu. To znamená, že se používá v desetinných číslech čárka." VerticalAlignment="Center" TextWrapping="Wrap"/>
+        
+        <!--obecny popis aplikace-->        
+        <!--<TextBlock Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap" FontSize="15"> <Run Text="Vytvořeno při studiu na Smíchovské střední půmyslové škole"/><LineBreak/><LineBreak/><Run Text="školní rok 2020/21"/></TextBlock>-->
 
-        <Button Grid.Row="3" Grid.Column="3" Content="Zpet k vypoctu" MaxHeight="50" MaxWidth="150" FontSize="20" Click="Button_MainWindow"/>
+        <!--buttony-->
+        <Button Grid.Row="2" Grid.Column="2" Content="Zpět k výpočtu" Margin="10,10" MaxWidth="200" MaxHeight="75" BorderThickness="5" Click="Button_MainWindow"/>
 
     </Grid>
 </Window>

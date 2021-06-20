@@ -63,10 +63,12 @@ namespace Kalkulator
         {
             Regex r = new Regex(@"^\d+,{1}\d+$");
             if ((sender as TextBox).Text != "")
+            {
                 if (e.Command == ApplicationCommands.Paste)
-                    e.Handled = true;
-
-            // PLUS přidat co se deje proc nejde kopírovat
+                    e.Handled = true;            
+                
+                // PLUS přidat co se deje proc nejde kopírovat
+            }
         }
 
         private void Button_Spocitat(object sender, RoutedEventArgs e)
