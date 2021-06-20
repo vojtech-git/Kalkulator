@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kalkulator"
         mc:Ignorable="d"
-        Title="VysvetlivkyWindow" Height="450" Width="800">
+        Title="Vysvetlivky" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
@@ -23,7 +23,7 @@
         </Grid.RowDefinitions>
 
         <TextBlock Grid.Row="1" Grid.Column="1" Text="Vysvětlivky" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="40" FontWeight="Bold"/>
-        <TextBlock Grid.Row="2" Grid.Column="2" Text="Místo k popsáni programu nebo pro vysvětlující obrázky" VerticalAlignment="Center"/>
+        <TextBlock Grid.Row="2" Grid.Column="2" Text="Místo k popsáni programu nebo pro vysvětlující obrázky APLIKACE JE V EVROPA FORMATU" VerticalAlignment="Center"/>
 
         <Button Grid.Row="3" Grid.Column="3" Content="Zpet k vypoctu" MaxHeight="50" MaxWidth="150" FontSize="20" Click="Button_MainWindow"/>
 

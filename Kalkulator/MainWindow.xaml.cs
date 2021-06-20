@@ -24,6 +24,26 @@ namespace Kalkulator
         public MainWindow()
         {
             InitializeComponent();
+            TextBox[] zadavaciPole = new TextBox[] { textBoxDo, textBoxDi, textBoxFx, textBoxFy, textBoxFz, textBoxMx, textBoxMy, textBoxMz };
+            foreach (TextBox textBox in zadavaciPole)
+                DataObject.AddPastingHandler(textBox, PasteHandler);
+        }
+
+        private void PasteHandler(object sender, DataObjectPastingEventArgs e)
+        {
+            TextBox tb = sender as TextBox;
+            bool textOK = false;
+
+            if (e.DataObject.GetDataPresent(typeof(string)))
+            {
+                string pasteText = e.DataObject.GetData(typeof(string)) as string;
+                Regex r = new Regex(@"^\d+,{1}\d+$");
+                if (r.IsMatch(pasteText))
+                    textOK = true;
+            }
+
+            if (!textOK)
+                e.CancelCommand();
         }
 
         private void OnlyNumbers_PreviewInput(object sender, TextCompositionEventArgs e)
@@ -34,18 +54,23 @@ namespace Kalkulator
 
         private void NotSpace_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key == Key.Space) e.Handled = true;
+            //zakazuje mezeru
+            if (e.Key == Key.Space) 
+                e.Handled = true;
         }
 
         private void textBox_PreviewExecuted(object sender, ExecutedRoutedEventArgs e)
         {
-            if (e.Command == ApplicationCommands.Copy || e.Command == ApplicationCommands.Cut || e.Command == ApplicationCommands.Paste)
-                e.Handled = true;            
+            Regex r = new Regex(@"^\d+,{1}\d+$");
+            if ((sender as TextBox).Text != "")
+                if (e.Command == ApplicationCommands.Paste)
+                    e.Handled = true;
+
+            // PLUS přidat co se deje proc nejde kopírovat
         }
 
         private void Button_Spocitat(object sender, RoutedEventArgs e)
         {
-            
             double numResultA;
             double numResultWo;            
             double numResultWk;
